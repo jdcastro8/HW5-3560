@@ -1,65 +1,28 @@
 @startuml
 
-class Employee {
-    - firstName : String
-    - lastName : String
-    - socialSecurityNumber : String
-
-    + Employee(firstName : String, lastName : String, socialSecurityNumber : String)
-    + setFirstName(firstName : String) : void
-    + setLastName(lastName : String) : void
-    + setSocialSecurityNumber(socialSecurityNumber : String) : void
-    + getFirstName() : String
-    + getLastName() : String
-    + getSocialSecurityNumber() : String
-    + print() : void
+object "<u>ships:Ship[]</u>" as sa {
+    length = 3
 }
 
-class SalariedEmployee {
-    - weeklySalary : double
-
-    + SalariedEmployee(firstName : String, lastName : String, socialSecurityNumber : String, weeklySalary : double)
-    + setWeeklySalary(weeklySalary : double) : void
-    + getWeeklySalary() : double
-    + print() : void
+object "<u>titanic:Ship</u>" as ts {
+    name = "Titanic"
+    yearBuilt = "1912"
 }
 
-class HourlyEmployee {
-    - wage : double
-    - hoursWorked : double
-
-    + HourlyEmployee(firstName : String, lastName : String, socialSecurityNumber : String, wage : double, hoursWorked : double)
-    + setWage(wage : double) : void
-    + setHoursWorked(hoursWorked : double) : void
-    + getWage() : double
-    + getHoursWorked() : double
-    + print() : void
+object "<u>royalPrincess:CruiseShip</u>" as rp {
+    name = "Royal Princess"
+    yearBuilt = "2013"
+    maxPassengers = 3600
 }
 
-class CommissionEmployee {
-    - commissionRate : double
-    - grossSales : double
-
-    + CommissionEmployee(firstName : String, lastName : String, socialSecurityNumber : String, commissionRate : double, grossSales : double)
-    + setCommissionRate(commissionRate : double) : void
-    + setGrossSales(grossSales : double) : void
-    + getCommissionRate() : double
-    + getGrossSales() : double
-    + print() : void
+object "<u>everGiven:CargoShip</u>" as eg {
+    name = "Ever Given"
+    yearBuilt = "2018"
+    cargoCapacity = 200000
 }
 
-class BaseEmployee {
-    - baseSalary : double
-
-    + BaseEmployee(firstName : String, lastName : String, socialSecurityNumber : String, baseSalary : double)
-    + setBaseSalary(baseSalary : double) : void
-    + getBaseSalary() : double
-    + print() : void
-}
-
-Employee <|-- SalariedEmployee
-Employee <|-- HourlyEmployee
-Employee <|-- CommissionEmployee
-Employee <|-- BaseEmployee
+sa --> ts : [0]
+sa --> rp : [1]
+sa --> eg : [2]
 
 @enduml
