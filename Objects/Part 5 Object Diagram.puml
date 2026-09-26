@@ -1,55 +1,55 @@
 @startuml
 
-object "phpDemo1 : Folder" as phpDemo1 {
+object "<u>phpDemo1:Folder</u>" as pd {
     name = "php_demo1"
 }
 
-object "sourceFiles : Folder" as sourceFiles {
+object "<u>sourceFiles:Folder</u>" as sf {
     name = "Source Files"
 }
 
-object "includePath : Folder" as includePath {
+object "<u>includePath:Folder</u>" as ip {
     name = "Include Path"
 }
 
-object "remoteFiles : Folder" as remoteFiles {
+object "<u>remoteFiles:Folder</u>" as rf {
     name = "Remote Files"
 }
 
-object "phalcon : Folder" as phalcon {
+object "<u>phalcon:Folder</u>" as ph {
     name = ".phalcon"
 }
 
-object "cache : Folder" as cache {
+object "<u>cache:Folder</u>" as ca {
     name = "cache"
 }
 
-object "publicFolder : Folder" as publicFolder {
+object "<u>publicFolder:Folder</u>" as pf {
     name = "public"
 }
 
-object "file1 : File" as file1 {
+object "<u>htaccess:File</u>" as ht {
     name = ".htaccess"
 }
 
-object "file2 : File" as file2 {
+object "<u>htrouter:File</u>" as hr {
     name = ".htrouter.php"
 }
 
-object "file3 : File" as file3 {
+object "<u>index:File</u>" as ix {
     name = "index.html"
 }
 
-phpDemo1 *-- sourceFiles
-phpDemo1 *-- includePath
-phpDemo1 *-- remoteFiles
+pd *-- sf
+pd *-- ip
+pd *-- rf
 
-sourceFiles *-- phalcon
-sourceFiles *-- cache
-sourceFiles *-- publicFolder
+sf *-- ph
+sf *-- ca
+sf *-- pf
 
-publicFolder *-- file1
-publicFolder *-- file2
-publicFolder *-- file3
+pf *-- ht
+pf *-- hr
+pf *-- ix
 
 @enduml
