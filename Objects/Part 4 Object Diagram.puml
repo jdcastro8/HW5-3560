@@ -1,22 +1,22 @@
 @startuml
 
-object "course : Course" as course {
+object "<u>course:Course</u>" as c {
     courseName = "CS 3560"
 }
 
-object "instructor1 : Instructor" as instructor1 {
+object "<u>instructor1:Instructor</u>" as i1 {
     firstName = "Nima"
     lastName = "Davarpanah"
     officeNumber = "3-2636"
 }
 
-object "textbook1 : Textbook" as textbook1 {
+object "<u>textbook1:Textbook</u>" as t1 {
     title = "Clean Code"
     author = "Robert C. Martin"
     publisher = "Prentice Hall"
 }
 
-course o-- instructor1 : instructor
-course o-- textbook1 : textbook
+c o-- i1 : instructor
+c o-- t1 : textbook
 
 @enduml
