@@ -1,1 +1,49 @@
+@startuml
 
+class Instructor {
+    - firstName : String
+    - lastName : String
+    - officeNumber : String
+
+    + Instructor(firstName : String, lastName : String, officeNumber : String)
+    + setFirstName(firstName : String) : void
+    + setLastName(lastName : String) : void
+    + setOfficeNumber(officeNumber : String) : void
+    + getFirstName() : String
+    + getLastName() : String
+    + getOfficeNumber() : String
+}
+
+class Textbook {
+    - title : String
+    - author : String
+    - publisher : String
+
+    + Textbook(title : String, author : String, publisher : String)
+    + setTitle(title : String) : void
+    + setAuthor(author : String) : void
+    + setPublisher(publisher : String) : void
+    + getTitle() : String
+    + getAuthor() : String
+    + getPublisher() : String
+}
+
+class Course {
+    - courseName : String
+    - instructors : Instructor[]
+    - textbooks : Textbook[]
+
+    + Course(courseName : String, instructors : Instructor[], textbooks : Textbook[])
+    + setCourseName(courseName : String) : void
+    + getCourseName() : String
+    + setInstructors(instructors : Instructor[]) : void
+    + getInstructors() : Instructor[]
+    + setTextbooks(textbooks : Textbook[]) : void
+    + getTextbooks() : Textbook[]
+    + print() : void
+}
+
+Course "1" o-- "1..*" Instructor : has
+Course "1" o-- "1..*" Textbook : has
+
+@enduml
