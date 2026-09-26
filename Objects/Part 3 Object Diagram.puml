@@ -1,1 +1,65 @@
+@startuml
 
+class Employee {
+    - firstName : String
+    - lastName : String
+    - socialSecurityNumber : String
+
+    + Employee(firstName : String, lastName : String, socialSecurityNumber : String)
+    + setFirstName(firstName : String) : void
+    + setLastName(lastName : String) : void
+    + setSocialSecurityNumber(socialSecurityNumber : String) : void
+    + getFirstName() : String
+    + getLastName() : String
+    + getSocialSecurityNumber() : String
+    + print() : void
+}
+
+class SalariedEmployee {
+    - weeklySalary : double
+
+    + SalariedEmployee(firstName : String, lastName : String, socialSecurityNumber : String, weeklySalary : double)
+    + setWeeklySalary(weeklySalary : double) : void
+    + getWeeklySalary() : double
+    + print() : void
+}
+
+class HourlyEmployee {
+    - wage : double
+    - hoursWorked : double
+
+    + HourlyEmployee(firstName : String, lastName : String, socialSecurityNumber : String, wage : double, hoursWorked : double)
+    + setWage(wage : double) : void
+    + setHoursWorked(hoursWorked : double) : void
+    + getWage() : double
+    + getHoursWorked() : double
+    + print() : void
+}
+
+class CommissionEmployee {
+    - commissionRate : double
+    - grossSales : double
+
+    + CommissionEmployee(firstName : String, lastName : String, socialSecurityNumber : String, commissionRate : double, grossSales : double)
+    + setCommissionRate(commissionRate : double) : void
+    + setGrossSales(grossSales : double) : void
+    + getCommissionRate() : double
+    + getGrossSales() : double
+    + print() : void
+}
+
+class BaseEmployee {
+    - baseSalary : double
+
+    + BaseEmployee(firstName : String, lastName : String, socialSecurityNumber : String, baseSalary : double)
+    + setBaseSalary(baseSalary : double) : void
+    + getBaseSalary() : double
+    + print() : void
+}
+
+Employee <|-- SalariedEmployee
+Employee <|-- HourlyEmployee
+Employee <|-- CommissionEmployee
+Employee <|-- BaseEmployee
+
+@enduml
