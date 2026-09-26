@@ -1,1 +1,31 @@
+@startuml
 
+class Folder {
+    - name : String
+    - files : ArrayList<File>
+    - subFolders : ArrayList<Folder>
+
+    + Folder(name : String)
+    + setName(name : String) : void
+    + getName() : String
+    + getFiles() : ArrayList<File>
+    + getSubFolders() : ArrayList<Folder>
+    + addFolder(name : String) : Folder
+    + addFile(name : String) : void
+    + deleteFolder(name : String) : void
+    + print() : void
+}
+
+class File {
+    - name : String
+
+    + File(name : String)
+    + setName(name : String) : void
+    + getName() : String
+    + print(indent : String) : void
+}
+
+Folder "1" *-- "0..*" File : contains
+Folder "1" *-- "0..*" Folder : subfolders
+
+@enduml
